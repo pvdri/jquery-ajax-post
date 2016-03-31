@@ -1,10 +1,12 @@
 'use strict';
 
-const books = (success, fail) => {
+const books = (success, fail, form, bookID) => {
   console.log('Start request');
   $.ajax({
-    method: 'GET',
-    url: 'http://localhost:3000/books',
+    method: 'PATCH',
+    url: 'http://localhost:3000/books/' + bookID,
+    processData: false,
+    data: form,
   })
   .done(success)
   .fail(fail);

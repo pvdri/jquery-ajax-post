@@ -7,11 +7,9 @@ const ui = require('./ui');
 $(() => {
   $('#book-form').on('submit', function (event) {
     event.preventDefault();
-    let bookId = $('#book-form').find("[name='book-id']").val();
-    if (bookId) {
-
-    } else {
-      libraryApi.books(ui.getBooksSuccess, ui.getBooksFail);
-    }
+    //$('#book-form').find("[name='book-id']").val()
+    let form = getFormFields(event.target);
+    let bookID = $('.book-id').val();
+        libraryApi.books(ui.getBooksSuccess, ui.getBooksFail, form, bookID);
   });
 });

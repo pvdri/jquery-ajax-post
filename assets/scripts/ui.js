@@ -1,7 +1,7 @@
 'use strict';
 
 const getBooksSuccess = (data) => {
-  console.log(data.books);
+  console.log(data);
 };
 
 const getBooksFail = (error) => {
